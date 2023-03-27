@@ -1,6 +1,6 @@
 import {BrowserRouter} from 'react-router-dom';
 import React, { lazy, Suspense, useEffect, useState } from 'react';
-import { Hero, Navbar } from './components';
+import { Navbar } from './components';
 
 // import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas } from '@/components';
 
@@ -13,7 +13,6 @@ const StarsLazy = React.lazy(() => import('./components/canvas/Stars'));
 const HeroLazy = React.lazy(() => import('./components/Hero'));
 
 const App = () => {
-
   const [isMobile, setIsMobile] = useState<boolean>(false);
   useEffect(() => {
     //todo: consider turn it into a hook

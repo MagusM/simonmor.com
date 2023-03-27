@@ -7,8 +7,6 @@ import CanvasLoader from '../Loader';
 const Computer = React.lazy(() => import('./Computer'));
 
 const CompoterCanvas = ({isMobile}: any) => {
-
-
   return (
     <Canvas
       frameloop='demand'
