@@ -44,7 +44,7 @@ const App = () => {
             <ExperienceLazy />
           </Suspense>
           <Suspense>
-            <TechLazy />
+            {/* <TechLazy /> */}
           </Suspense>
           {/* <Works /> */}
           <Suspense>
