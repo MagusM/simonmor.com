@@ -30,33 +30,33 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <div className='relative z-0 bg-primary'>
-        <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
-          <Navbar />
+        <div className='relative z-0 bg-primary'>
+          <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
+            <Navbar />
+            <Suspense>
+              <HeroLazy isMobile={isMobile} />
+            </Suspense>
+          </div>
           <Suspense>
-            <HeroLazy isMobile={isMobile} />
+            <AboutLazy />
           </Suspense>
-        </div>
-        <Suspense>
-          <AboutLazy />
-        </Suspense>
-        <Suspense>
-          <ExperienceLazy />
-        </Suspense>
-        <Suspense>
-          <TechLazy />
-        </Suspense>
-        {/* <Works /> */}
-        <Suspense>
-          <FeedbacksLazy />
-        </Suspense>
-        <div className='relative z-0'>
           <Suspense>
-            <ContactLazy />
-            <StarsLazy />
+            <ExperienceLazy />
           </Suspense>
+          <Suspense>
+            <TechLazy />
+          </Suspense>
+          {/* <Works /> */}
+          <Suspense>
+            <FeedbacksLazy />
+          </Suspense>
+          <div className='relative z-0'>
+            <Suspense>
+              <ContactLazy />
+              <StarsLazy />
+            </Suspense>
+          </div>
         </div>
-      </div>
     </BrowserRouter>
   )
 }
