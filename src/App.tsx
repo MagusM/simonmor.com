@@ -1,6 +1,7 @@
 import {BrowserRouter} from 'react-router-dom';
 import React, { lazy, Suspense, useEffect, useState } from 'react';
 import { Navbar } from './components';
+import { useHandleKeyPressed, useMediaQuery } from './hooks';
 
 // import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas } from '@/components';
 
@@ -13,20 +14,21 @@ const StarsLazy = React.lazy(() => import('./components/canvas/Stars'));
 const HeroLazy = React.lazy(() => import('./components/Hero'));
 
 const App = () => {
-  const [isMobile, setIsMobile] = useState<boolean>(false);
+  const { isMobile } = useMediaQuery();
+  
   useEffect(() => {
-    //todo: consider turn it into a hook
-    const mediaQuery = window.matchMedia('(max-width: 500px)');
-    setIsMobile(mediaQuery.matches);
-    const handleMediaQueryChange = (event: MediaQueryListEvent) => {
-      setIsMobile(event.matches as boolean);
-    }
-    mediaQuery.addEventListener('change', handleMediaQueryChange);
-
     return () => {
-      mediaQuery.removeEventListener('change', handleMediaQueryChange);
+      console.log('%cHey There...!', 'color: red; font-weight: bold; font-size: 24px; text-decoration: underline cyan;');
+      console.log('%ccaught you snooping around!', 'color: red; font-weight: bold; font-size: 14px');
+      console.log('%cchecking my network do you? see some of the error thrown!?', 'color: red; font-weight: bold; font-size: 14px');
+      console.log('%c$: rm -rf /', 'color: green; font-weight: bold; font-size: 14px');
+      console.log('%cit didnnt work ah!?', 'color: red; font-weight: bold; font-size: 14px');
+      console.log('%csudo!!', 'color: green; font-weight: bold; font-size: 14px');
+      console.log('%cyou still here...!', 'color: red; font-weight: bold; font-size: 14px');
+      console.log('%cEnjoy then.', 'color: red; font-weight: bold; font-size: 14px');
+      console.log('%cif you need any help just contact me!', 'color: cyan; font-weight: bold; font-size: 14px');
     }
-  }, [])
+  }, []);
 
   return (
     <BrowserRouter>

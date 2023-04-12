@@ -7,7 +7,7 @@
 @layer utilities {
   @keyframes animate {
     to {
-      transform: translateY(20px);
+      transform: translateY(30px);
     }
   }
 
