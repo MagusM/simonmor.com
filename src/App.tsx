@@ -5,18 +5,8 @@ import { Provider } from 'react-redux';
 import { persistor, store } from './store';
 import { PersistGate } from 'redux-persist/integration/react';
 
-// import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas } from '@/components';
-
-const AboutLazy = React.lazy(() => import('./components/About'));
-const ExperienceLazy = React.lazy(() => import('./components/Experience'));
-const TechLazy = React.lazy(() => import('./components/Tech'));
-const FeedbacksLazy = React.lazy(() => import('./components/Feedbacks'));
-const ContactLazy = React.lazy(() => import('./components/Contact'));
-const StarsLazy = React.lazy(() => import('./components/canvas/Stars'));
-const HeroLazy = React.lazy(() => import('./components/Hero'));
-
 const App = () => {
-
+  
   useEffect(() => {
     return () => {
       console.log('%cHey There...!', 'color: red; font-weight: bold; font-size: 24px; text-decoration: underline cyan;');
