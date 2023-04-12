@@ -1,6 +1,9 @@
 import {BrowserRouter} from 'react-router-dom';
 import React, { useEffect } from 'react';
 import AppRoutes from './routes';
+import { Provider } from 'react-redux';
+import { persistor, store } from './store';
+import { PersistGate } from 'redux-persist/integration/react';
 
 // import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas } from '@/components';
 
@@ -29,9 +32,13 @@ const App = () => {
   }, []);
 
   return (
-    <BrowserRouter>
-      <AppRoutes />        
-    </BrowserRouter>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <BrowserRouter>
+          <AppRoutes />        
+        </BrowserRouter>
+      </PersistGate>
+    </Provider>
   )
 }
 

@@ -36,6 +36,7 @@
     "@types/react-dom": "^18.0.11",
     "@types/react-router-dom": "^5.3.3",
     "@types/react-vertical-timeline-component": "^3.3.3",
+    "@types/redux-persist": "^4.3.1",
     "@vitejs/plugin-react": "^3.1.0",
     "autoprefixer": "^10.4.14",
     "cross-env": "^7.0.3",
