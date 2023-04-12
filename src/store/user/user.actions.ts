@@ -1,3 +1,10 @@
+/**
+ * todo: is this needed?
+ * actions are part of reducer now.
+ * 
+ * use this file to create actions from reducer or have it part of services?
+ */
+
 import { AppThunk } from "..";
 // import { setUser } from "./user.slice";
 
