@@ -1,7 +1,9 @@
 import {BrowserRouter} from 'react-router-dom';
-import React, { lazy, Suspense, useEffect, useState } from 'react';
-import { Navbar } from './components';
-import { useHandleKeyPressed, useMediaQuery } from './hooks';
+import React, { useEffect } from 'react';
+import AppRoutes from './routes';
+import { Provider } from 'react-redux';
+import { persistor, store } from './store';
+import { PersistGate } from 'redux-persist/integration/react';
 
 // import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas } from '@/components';
 
@@ -14,8 +16,7 @@ const StarsLazy = React.lazy(() => import('./components/canvas/Stars'));
 const HeroLazy = React.lazy(() => import('./components/Hero'));
 
 const App = () => {
-  const { isMobile } = useMediaQuery();
-  
+
   useEffect(() => {
     return () => {
       console.log('%cHey There...!', 'color: red; font-weight: bold; font-size: 24px; text-decoration: underline cyan;');
@@ -31,35 +32,13 @@ const App = () => {
   }, []);
 
   return (
-    <BrowserRouter>
-        <div className='relative z-0 bg-primary'>
-          <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
-            <Navbar />
-            <Suspense>
-              <HeroLazy isMobile={isMobile} />
-            </Suspense>
-          </div>
-          <Suspense>
-            <AboutLazy />
-          </Suspense>
-          <Suspense>
-            <ExperienceLazy />
-          </Suspense>
-          <Suspense>
-            {/* <TechLazy /> */}
-          </Suspense>
-          {/* <Works /> */}
-          <Suspense>
-            <FeedbacksLazy />
-          </Suspense>
-          <div className='relative z-0'>
-            <Suspense>
-              <ContactLazy />
-              <StarsLazy />
-            </Suspense>
-          </div>
-        </div>
-    </BrowserRouter>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <BrowserRouter>
+          <AppRoutes />        
+        </BrowserRouter>
+      </PersistGate>
+    </Provider>
   )
 }
 
