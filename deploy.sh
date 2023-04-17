@@ -7,7 +7,7 @@ npm install
 npm run build
 
 # Delte old public_html folder
-# rm -rf public_html
+rm -rf public_html/*
 
 # Move the build files to the public directory
 mv build/* public_html/

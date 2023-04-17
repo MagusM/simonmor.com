@@ -17,9 +17,9 @@ const Hero = (props: any) => {
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
             I develop 3D visuals, user <br className='sm:block hidden'/> interfaces, servers and web applications.
           </p>
-          <p>
+          {/* <p>
             download my resume
-          </p>
+          </p> */}
         </div>
       </div>
 
