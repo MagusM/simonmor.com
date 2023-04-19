@@ -1,5 +1,6 @@
 import { Navbar } from "@/components";
 import { useMediaQuery } from "@/hooks";
+import { AppLayout } from "@/layouts";
 import React, { Suspense } from "react";
 
 const Home = () => {
@@ -45,4 +46,4 @@ const Home = () => {
     );
 }
 
-export default Home;
+export default AppLayout(Home);
