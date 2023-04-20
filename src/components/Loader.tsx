@@ -1,16 +1,16 @@
-import { Html, useProgress } from "@react-three/drei";
+import { Html, useProgress } from '@react-three/drei'
 
 const Loader = () => {
-  const { progress } = useProgress();
+  const { progress } = useProgress()
   return (
     <Html
-      as='div'
+      as="div"
       center
       style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection: "column",
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'column',
       }}
     >
       <span className="canvas-loader"></span>
@@ -19,7 +19,7 @@ const Loader = () => {
           fontSize: 14,
           color: '#f1f1f1',
           fontWeight: 800,
-          marginTop: 40
+          marginTop: 40,
         }}
       >
         {progress.toFixed(2)}%
@@ -28,4 +28,4 @@ const Loader = () => {
   )
 }
 
-export default Loader;
+export default Loader

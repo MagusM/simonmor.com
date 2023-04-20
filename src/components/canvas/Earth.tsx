@@ -1,8 +1,8 @@
-import React from "react";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import React from 'react'
+import { Canvas } from '@react-three/fiber'
+import { OrbitControls } from '@react-three/drei'
 
-const Earth = React.lazy(() => import('./EarthEl'));
+const Earth = React.lazy(() => import('./EarthEl'))
 
 const EarthCanvas = () => {
   return (
@@ -14,7 +14,7 @@ const EarthCanvas = () => {
         fov: 45,
         near: 0.1,
         far: 200,
-        position: [-4, 3, 6]
+        position: [-4, 3, 6],
       }}
     >
       <Earth /> {/* use the Earth component */}
@@ -25,7 +25,7 @@ const EarthCanvas = () => {
         minPolarAngle={Math.PI / 2}
       />
     </Canvas>
-  );
+  )
 }
 
-export default EarthCanvas;
+export default EarthCanvas

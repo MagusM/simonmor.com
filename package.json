@@ -10,7 +10,8 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development vite --host",
     "build": "cross-env NODE_ENV=production tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\""
   },
   "dependencies": {
     "@emailjs/browser": "^3.10.0",
@@ -18,6 +19,8 @@
     "@react-three/fiber": "^8.12.0",
     "@reduxjs/toolkit": "^1.9.3",
     "@types/three": "^0.149.0",
+    "flowbite": "^1.6.5",
+    "flowbite-react": "^0.4.3",
     "framer-motion": "^10.6.1",
     "maath": "^0.5.3",
     "react": "^18.2.0",
@@ -43,6 +46,7 @@
     "eslint": "^8.38.0",
     "eslint-config-react-app": "^7.0.1",
     "postcss": "^8.4.21",
+    "prettier": "^2.8.7",
     "tailwindcss": "^3.2.7",
     "terser": "^5.16.9",
     "typescript": "^4.9.3",

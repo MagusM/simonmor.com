@@ -1,5 +1,3 @@
-import LocalStorage from "./localStorage/localSotrage.service";
+import LocalStorage from './localStorage/localSotrage.service'
 
-export {
-    LocalStorage
-}
+export { LocalStorage }

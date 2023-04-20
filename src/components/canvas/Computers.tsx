@@ -1,11 +1,18 @@
-import React, { Suspense } from 'react';
-import { Canvas } from '@react-three/fiber';
-import { MeshDistortMaterial, OrbitControls, Preload, Sphere, Stage, useGLTF } from '@react-three/drei';
-import CanvasLoader from '../Loader';
-const Mac = React.lazy(() => import('./Mac'));
+import React, { Suspense } from 'react'
+import { Canvas } from '@react-three/fiber'
+import {
+  MeshDistortMaterial,
+  OrbitControls,
+  Preload,
+  Sphere,
+  Stage,
+  useGLTF,
+} from '@react-three/drei'
+import CanvasLoader from '../Loader'
+const Mac = React.lazy(() => import('./Mac'))
 
 interface CompoterCanvasProps {
-  isMobile: boolean;
+  isMobile: boolean
 }
 
 const CompoterCanvas = ({ isMobile }: CompoterCanvasProps) => {
@@ -16,8 +23,8 @@ const CompoterCanvas = ({ isMobile }: CompoterCanvasProps) => {
           {/* <OrbitControls enableZoom={false} /> */}
           <ambientLight intensity={1} />
           <directionalLight position={[3, 2, 1]} />
-          <Sphere 
-            args={[1, 100, 200]} 
+          <Sphere
+            args={[1, 100, 200]}
             scale={isMobile ? 1.5 : 2.2}
             position={isMobile ? [0, -0.85, -0.13] : [0, -1.0, -0.13]}
           >
@@ -35,7 +42,7 @@ const CompoterCanvas = ({ isMobile }: CompoterCanvasProps) => {
         className="w-[250px] h-[600px] object-contain absolute top-[150px] bottom-0 left-0 right-0 mx-auto my-auto md:w-[500px] md:h-[500px] md:top-[30%] animate"
       />
     </>
-  );
+  )
 }
 
-export default CompoterCanvas;
+export default CompoterCanvas
