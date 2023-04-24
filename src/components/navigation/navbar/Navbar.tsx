@@ -22,8 +22,8 @@ const Navbar = () => {
       avatarTargetEl.current!,
       avatarTriggerEl.current,
       avatarOptions
-    )
-    avatarCollapse.expand()
+    );
+    avatarCollapse.expand();
 
     return () => {
       avatarCollapse.collapse()
@@ -45,14 +45,14 @@ const Navbar = () => {
       },
     }
 
-    const avatarCollapse: CollapseInterface = new Collapse(
+    const mainCollapse: CollapseInterface = new Collapse(
       mainTargetEl.current!,
       mainTriggerEl.current,
       mainOptions
     )
 
     return () => {
-      avatarCollapse.collapse()
+      mainCollapse.collapse();
     }
   }, [])
 
@@ -74,8 +74,7 @@ const Navbar = () => {
             ref={avatarTriggerEl}
             type="button"
             className="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
-            i
-            d="user-menu-button"
+            id="user-menu-button"
             aria-expanded="false"
             data-dropdown-toggle="user-dropdown"
             data-dropdown-placement="bottom"
@@ -90,7 +89,7 @@ const Navbar = () => {
           {/* Dropdown menu */}
           <div
             ref={avatarTargetEl}
-            className="z-50 hidden my-4 text-base list-none 
+            className="z-50 hidden my-4 text-base list-none
                                  bg-white divide-y divide-gray-100 rounded-lg shadow 
                                  dark:bg-gray-700 dark:divide-gray-600"
             id="user-dropdown"
@@ -165,7 +164,7 @@ const Navbar = () => {
           </button>
         </div>
         <div
-          className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+          className="items-center justify-between z-10 hidden w-[90%] md:flex md:w-auto md:order-1 absolute inset-y-14 left-1/2 transform -translate-x-1/2"
           id="mobile-menu-2"
           ref={mainTargetEl}
         >
