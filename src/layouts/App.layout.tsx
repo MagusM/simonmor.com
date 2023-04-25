@@ -1,14 +1,14 @@
-import { Footer, Navbar } from '@/components'
+import { Footer, Navbar } from '@/components';
 
 const AppLayout = (Component: any) =>
-  function AppLayout() {
-    return (
-      <>
-        <Navbar />
-        <Component />
-        <Footer />
-      </>
-    )
-  }
+    function AppLayout() {
+        return (
+            <>
+                <Navbar />
+                <Component />
+                <Footer />
+            </>
+        );
+    };
 
-export default AppLayout
+export default AppLayout;
