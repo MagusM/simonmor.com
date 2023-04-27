@@ -1,9 +1,4 @@
-import {
-    EarthCanvas,
-    BallCanvas,
-    HeroCanvas,
-    StarsCanvas,
-} from './canvas';
+import { EarthCanvas, BallCanvas, HeroCanvas, StarsCanvas } from './canvas';
 import Hero from './Hero';
 import Navbar from './navigation/navbar/Navbar';
 import About from './About';
@@ -33,5 +28,5 @@ export {
     Footer,
     AppLink,
     PureLink,
-    ScrollAnimation
+    ScrollAnimation,
 };

@@ -15,10 +15,10 @@ const PureLink: React.FC<PureLinkProps> = ({
     ...props
 }) => {
     return (
-        <Link to={href} target={isExternal ? '_blank' : '_self'} {...props}>
+        <a href={href} target={isExternal ? '_blank' : '_self'} {...props}>
             {name ? name : ''}
             {props.children ? props.children : ''}
-        </Link>
+        </a>
     );
 };
 

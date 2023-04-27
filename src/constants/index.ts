@@ -290,4 +290,88 @@ const projects = [
     },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+type InnerLinkType = {
+    title: string;
+    href: string;
+};
+
+const innerNavigation = [
+    {
+        title: 'home',
+        href: '#',
+        active: true,
+    },
+    {
+        title: 'about',
+        href: '#about',
+        active: true,
+    },
+    {
+        title: 'work',
+        href: '#work',
+        active: true,
+    },
+    {
+        title: 'services',
+        href: '#services',
+        active: false,
+    },
+    {
+        title: 'testimonials',
+        href: '#feedback',
+        active: true,
+    },
+    {
+        title: 'pricing',
+        href: '#pricing',
+        active: false,
+    },
+    {
+        title: 'contact',
+        href: '#contact',
+        active: true,
+    },
+    {
+        title: 'privacy policy',
+        href: '#privacy',
+        active: false,
+    },
+    {
+        title: 'terms & conditions',
+        href: '#terms',
+        active: false,
+    },
+];
+
+const outerNavigation = [
+    {
+        title: 'gitHub',
+        href: 'https://github.com/MagusM',
+        active: true,
+    },
+    {
+        title: 'css-battle',
+        href: 'cssbattle.dev/player/simonmor',
+        active: true,
+    },
+    {
+        title: 'medium',
+        href: 'https://medium.com/@simomor',
+        active: true,
+    },
+    {
+        title: 'read.cv',
+        href: 'https://read.cv/simon_mor',
+        active: true,
+    },
+];
+
+export {
+    services,
+    technologies,
+    experiences,
+    testimonials,
+    projects,
+    innerNavigation,
+    outerNavigation,
+};
