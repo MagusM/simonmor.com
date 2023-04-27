@@ -37,11 +37,11 @@ const Hero = (props: any) => {
                     {/* download cv */}
                     <button
                         onClick={handleDownloadClick}
-                        className="relative inline-flex items-center justify-center p-0.5 
-                                        overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br 
-                                        from-cyan-500 to-blue-500 
-                                        group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white 
-                                        focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800"
+                        className="dark relative inline-flex items-center justify-center p-0.5 cursor-pointer z-10
+                                        overflow-hidden text-sm font-medium rounded-lg group bg-gradient-to-br 
+                                        from-cyan-500 to-primary-purple 
+                                        group-hover:from-cyan-500 group-hover:to-primary-purple hover:text-white text-white 
+                                        focus:ring-4 focus:outline-none focus:ring-primary-purple bg-transparent"
                     >
                         <span
                             className="relative px-4 py-2 flex flex-row justify-around items-center space-x-4
@@ -57,7 +57,10 @@ const Hero = (props: any) => {
                             >
                                 <path d="M75.978 24.711H52.026a2.11 2.11 0 0 0-2.111 2.111V55h-9.33a2.111 2.111 0 0 0-1.658 3.418l23.42 29.694a2.111 2.111 0 0 0 3.315 0l23.411-29.695A2.111 2.111 0 0 0 87.415 55h-9.326V26.822a2.11 2.11 0 0 0-2.111-2.111zm7.086 34.51L64 83.4 44.939 59.221h7.088a2.11 2.11 0 0 0 2.111-2.111V28.933h19.728V57.11a2.11 2.11 0 0 0 2.111 2.111zM34.52 101.178a2.11 2.11 0 0 0 2.111 2.111h54.738a2.111 2.111 0 0 0 0-4.222H36.631a2.11 2.11 0 0 0-2.111 2.111z" />
                             </svg>
-                            <span>Download CV</span>
+                            <span className="">
+                                Download{' '}
+                                <span className="hover:text-red-500">CV</span>
+                            </span>
                         </span>
                     </button>
                 </div>

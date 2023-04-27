@@ -105,12 +105,11 @@ const Navbar = () => {
     useEffect(() => {
         const sideDrawerOptions: DrawerOptions = {
             placement: 'left',
-            backdrop: false,
+            backdrop: true,
             bodyScrolling: true,
             edge: false,
             edgeOffset: '',
-            backdropClasses:
-                'bg-gray-900 bg-opacity-50 dark:bg-opacity-80 fixed inset-0 z-30',
+            backdropClasses: 'bg-gray-900 bg-opacity-50 fixed inset-0 z-30',
             onHide: () => {
                 console.log('side drawer is hidden');
             },
@@ -160,11 +159,11 @@ const Navbar = () => {
                     </p>
                 </Link>
                 {/* will hold the avatar and the mobile navigation triggre */}
-                <div className="flex items-center md:order-2">
+                <div className="flex items-center md:order-2 w-24 justify-end">
                     {/* avatar button */}
                     <button
                         type="button"
-                        className="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                        className="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-600"
                         id="user-menu-button"
                         data-drawer-target="drawer-navigation"
                         data-drawer-show="drawer-navigation"
@@ -183,7 +182,9 @@ const Navbar = () => {
                         ref={mainTriggerEl}
                         data-collapse-toggle="mobile-menu"
                         type="button"
-                        className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                        className="inline-flex items-center p-2 ml-1 text-sm
+                        rounded-lg md:hidden focus:outline-none focus:ring-2 
+                         text-secondary hover:bg-gray-700 focus:ring-gray-600"
                         aria-controls="mobile-menu"
                         aria-expanded="false"
                     >
