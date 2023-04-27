@@ -1,7 +1,7 @@
 import {
     EarthCanvas,
     BallCanvas,
-    ComputersCanvas,
+    HeroCanvas,
     StarsCanvas,
 } from './canvas';
 import Hero from './Hero';
@@ -15,6 +15,7 @@ import Contact from './Contact';
 import Footer from './Footer';
 import AppLink from './AppLink';
 import PureLink from './PureLink';
+import ScrollAnimation from './ScrollAnimation';
 
 export {
     Hero,
@@ -27,9 +28,10 @@ export {
     Contact,
     EarthCanvas,
     BallCanvas,
-    ComputersCanvas,
+    HeroCanvas,
     StarsCanvas,
     Footer,
     AppLink,
     PureLink,
+    ScrollAnimation
 };

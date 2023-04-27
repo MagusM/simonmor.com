@@ -2,7 +2,7 @@ import { logo } from '@/assets';
 
 const Footer = () => {
     const handleDownloadClick = () => {
-        const url = '/public/files/resume.pdf';
+        const url = '/files/resume.pdf';
         const link = document.createElement('a');
         link.href = url;
         link.download = `simon_mor_resume_${new Date().getFullYear()}`;
@@ -14,8 +14,8 @@ const Footer = () => {
     return (
         <footer className="bg-primary">
             <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
-                <div className="md:flex md:justify-between">
-                    <div className="mb-6 md:mb-0 space-y-4 flex flex-col items-start justify-between">
+                <div className="flex max-xs:flex-col justify-between max-xs:items-center w-full">
+                    <div className="mb-6 md:mb-0 space-y-4 flex flex-col items-center md:items-start md:justify-between w-full">
                         <a
                             href="https://flowbite.com/"
                             className="flex items-center"
@@ -26,7 +26,7 @@ const Footer = () => {
                             </span>
                         </a>
                         {/* this div holds the download button and the whtaapp link */}
-                        <div className="flex flex-row px-12 md:px-4 justify-between items-center space-x-5 w-full">
+                        <div className="flex flex-row px-12 md:px-4 justify-between items-center space-x-5 max-xs:w-full">
                             <a
                                 href={`https://wa.me/0542055028?text=Hello, I'd like to chat with you on WhatsApp!`}
                                 target="_blank"
@@ -49,14 +49,14 @@ const Footer = () => {
 
                             <button
                                 onClick={handleDownloadClick}
-                                className="relative inline-flex items-center justify-center p-0.5 
+                                className="relative inline-flex items-center justify-center p-0.5
                                         overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br 
                                         from-cyan-500 to-blue-500 
                                         group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white 
                                         focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800"
                             >
                                 <span
-                                    className="relative px-4 py-2 flex flex-row justify-around items-center space-x-4
+                                    className="relative px-4 py-2 flex flex-row justify-around items-center space-x-1 md:space-x-4
                                             transition-all ease-in duration-75 
                                             bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0"
                                 >
@@ -74,80 +74,84 @@ const Footer = () => {
                             </button>
                         </div>
                     </div>
-                    <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
-                        <div>
-                            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                                Resources
-                            </h2>
-                            <ul className="text-gray-600 dark:text-secondary font-medium">
-                                <li className="mb-4">
-                                    <a
-                                        href="https://read.cv/simon_mor"
-                                        className="hover:underline no-underline"
-                                        target="_blank"
-                                        rel="noreferrer"
-                                    >
-                                        Read.cv
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="https://medium.com/@simomor"
-                                        className="hover:underline"
-                                        target="_blank"
-                                        rel="noreferrer"
-                                    >
-                                        Medium
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                                Follow Me
-                            </h2>
-                            <ul className="text-gray-600 dark:text-secondary font-medium">
-                                <li className="mb-4">
-                                    <a
-                                        href="https://github.com/MagusM"
-                                        className="hover:underline"
-                                        target="_blank"
-                                        rel="noreferrer"
-                                    >
-                                        Github
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="cssbattle.dev/player/simonmor"
-                                        className="hover:underline"
-                                        target="_blank"
-                                        rel="noreferrer"
-                                    >
-                                        css-battle
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                                Legal
-                            </h2>
-                            <ul className="text-gray-600 dark:text-secondary font-medium">
-                                <li className="mb-4">
-                                    <a href="#" className="hover:underline">
-                                        Privacy Policy
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" className="hover:underline">
-                                        Terms &amp; Conditions
-                                    </a>
-                                </li>
-                            </ul>
+                    {/* links section */}
+                    <div className="relative flex justify-end items-center w-full">
+                        <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                            <div>
+                                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+                                    Resources
+                                </h2>
+                                <ul className="text-gray-600 dark:text-secondary font-medium">
+                                    <li className="mb-4">
+                                        <a
+                                            href="https://read.cv/simon_mor"
+                                            className="hover:underline no-underline"
+                                            target="_blank"
+                                            rel="noreferrer"
+                                        >
+                                            Read.cv
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a
+                                            href="https://medium.com/@simomor"
+                                            className="hover:underline"
+                                            target="_blank"
+                                            rel="noreferrer"
+                                        >
+                                            Medium
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+                                    Follow Me
+                                </h2>
+                                <ul className="text-gray-600 dark:text-secondary font-medium">
+                                    <li className="mb-4">
+                                        <a
+                                            href="https://github.com/MagusM"
+                                            className="hover:underline"
+                                            target="_blank"
+                                            rel="noreferrer"
+                                        >
+                                            Github
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a
+                                            href="cssbattle.dev/player/simonmor"
+                                            className="hover:underline"
+                                            target="_blank"
+                                            rel="noreferrer"
+                                        >
+                                            css-battle
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+                                    Legal
+                                </h2>
+                                <ul className="text-gray-600 dark:text-secondary font-medium">
+                                    <li className="mb-4">
+                                        <a href="#" className="hover:underline">
+                                            Privacy Policy
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" className="hover:underline">
+                                            Terms &amp; Conditions
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
+                {/* Footer last section */}
                 <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
                 <div className="sm:flex sm:items-center sm:justify-between">
                     <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">

@@ -15,7 +15,7 @@ interface CompoterCanvasProps {
     isMobile: boolean;
 }
 
-const CompoterCanvas = ({ isMobile }: CompoterCanvasProps) => {
+const HeroCanvas = ({ isMobile }: CompoterCanvasProps) => {
     return (
         <>
             <Canvas>
@@ -25,9 +25,9 @@ const CompoterCanvas = ({ isMobile }: CompoterCanvasProps) => {
                     <directionalLight position={[3, 2, 1]} />
                     <Sphere
                         args={[1, 100, 200]}
-                        scale={isMobile ? 1.5 : 2.2}
+                        scale={isMobile ? 1.6 : 2.2}
                         position={
-                            isMobile ? [0, -0.85, -0.13] : [0, -1.0, -0.13]
+                            isMobile ? [0, -0.55, -0.13] : [0, -0.4, -0.13]
                         }
                     >
                         <MeshDistortMaterial
@@ -41,10 +41,11 @@ const CompoterCanvas = ({ isMobile }: CompoterCanvasProps) => {
             </Canvas>
             <img
                 src="./images/moon.png"
-                className="w-[250px] h-[600px] object-contain absolute top-[150px] bottom-0 left-0 right-0 mx-auto my-auto md:w-[500px] md:h-[500px] md:top-[30%] animate"
+                className="w-[250px] h-[600px] object-contain absolute top-[90px] bottom-0 left-0 right-0 
+                mx-auto my-auto md:w-[500px] md:h-[500px] md:top-[90px] animate"
             />
         </>
     );
 };
 
-export default CompoterCanvas;
+export default HeroCanvas;
