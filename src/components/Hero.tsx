@@ -46,7 +46,7 @@ const Hero = (props: any) => {
                         <span
                             className="relative px-4 py-2 flex flex-row justify-around items-center space-x-4
                                             transition-all ease-in duration-75 
-                                            bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0"
+                                            bg-gray-900 rounded-md group-hover:bg-opacity-0"
                         >
                             <svg
                                 data-name="Layer 3"
