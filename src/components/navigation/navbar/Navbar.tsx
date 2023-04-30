@@ -1,5 +1,5 @@
 import { Collapse, Drawer } from 'flowbite';
-import { useEffect, useReducer, useRef } from 'react';
+import { useEffect, useReducer, useRef, useState } from 'react';
 import type {
     CollapseOptions,
     CollapseInterface,
@@ -9,7 +9,7 @@ import type {
 import SideDrawer from '../SideDrawer';
 import MainDrawer from '../MainDrawer';
 import { Link } from 'react-router-dom';
-import { logo } from '@/assets';
+import { logo, menu, close } from '@/assets';
 
 // state type
 type State = {
@@ -66,6 +66,7 @@ const reducer = (state: State, action: Action): State => {
 
 const Navbar = () => {
     const [state, dispatch] = useReducer(reducer, initialState);
+    const [isMainNavVisible, setIsMainNavVisible] = useState<boolean>(false);
     /**
      * main nav drawer
      */
@@ -75,14 +76,16 @@ const Navbar = () => {
     useEffect(() => {
         const mainOptions: CollapseOptions = {
             onCollapse: () => {
+                setIsMainNavVisible(false);
                 console.log('main element has been collapsed');
             },
             onExpand: () => {
-                sideDrawer.hide();
+                // sideDrawer.hide();
                 console.log('main element has been expanded');
             },
             onToggle: () => {
                 console.log('main element has been toggled');
+                setIsMainNavVisible((prevState) => !prevState);
             },
         };
 
@@ -100,41 +103,46 @@ const Navbar = () => {
     /**
      * side nav drawer
      */
-    let sideDrawer: DrawerInterface;
-    const sideDrawerTargetEl = useRef<HTMLDivElement>(null);
-    useEffect(() => {
-        const sideDrawerOptions: DrawerOptions = {
-            placement: 'left',
-            backdrop: true,
-            bodyScrolling: true,
-            edge: false,
-            edgeOffset: '',
-            backdropClasses: 'bg-gray-900 bg-opacity-50 fixed inset-0 z-30',
-            onHide: () => {
-                console.log('side drawer is hidden');
-            },
-            onShow: () => {
-                mainNavigation.collapse();
-                console.log('side drawer is shown');
-            },
-            onToggle: () => {
-                console.log('side drawer has been toggled');
-            },
-        };
+    // let sideDrawer: DrawerInterface;
+    // const sideDrawerTargetEl = useRef<HTMLDivElement>(null);
+    // useEffect(() => {
+    //     const sideDrawerOptions: DrawerOptions = {
+    //         placement: 'left',
+    //         backdrop: true,
+    //         bodyScrolling: true,
+    //         edge: false,
+    //         edgeOffset: '',
+    //         backdropClasses: 'bg-gray-900 bg-opacity-50 fixed inset-0 z-30',
+    //         onHide: () => {
+    //             console.log('side drawer is hidden');
+    //         },
+    //         onShow: () => {
+    //             mainNavigation.collapse();
+    //             console.log('side drawer is shown');
+    //         },
+    //         onToggle: () => {
+    //             console.log('side drawer has been toggled');
+    //         },
+    //     };
 
-        sideDrawer = new Drawer(sideDrawerTargetEl.current, sideDrawerOptions);
+    //     sideDrawer = new Drawer(sideDrawerTargetEl.current, sideDrawerOptions);
 
-        return () => {
-            sideDrawer.hide();
-        };
-    }, []);
+    //     return () => {
+    //         sideDrawer.hide();
+    //     };
+    // }, []);
 
-    const handleSideDrawerClicked = () => {
-        if (sideDrawer.isVisible()) {
-            return sideDrawer.hide();
-        } else {
-            sideDrawer.show();
-        }
+    // const handleSideDrawerClicked = () => {
+    //     if (sideDrawer.isVisible()) {
+    //         return sideDrawer.hide();
+    //     } else {
+    //         sideDrawer.show();
+    //     }
+    // };
+
+    const handleClickOutsideMainDrawer = () => {
+        console.log(`mainNavigation._visible: ${mainNavigation._visible}`);
+        mainNavigation.collapse();
     };
 
     return (
@@ -161,7 +169,7 @@ const Navbar = () => {
                 {/* will hold the avatar and the mobile navigation triggre */}
                 <div className="flex items-center md:order-2 w-24 justify-end">
                     {/* avatar button */}
-                    <button
+                    {/* <button
                         type="button"
                         className="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-600"
                         id="user-menu-button"
@@ -176,20 +184,23 @@ const Navbar = () => {
                             src="https://randomuser.me/api/portraits/women/6.jpg"
                             alt="user"
                         />
-                    </button>
+                    </button> */}
                     {/* navigation button */}
                     <button
                         ref={mainTriggerEl}
                         data-collapse-toggle="mobile-menu"
                         type="button"
-                        className="inline-flex items-center p-2 ml-1 text-sm
-                        rounded-lg md:hidden focus:outline-none focus:ring-2 
-                         text-secondary hover:bg-gray-700 focus:ring-gray-600"
+                        className="inline-flex items-center p-4 ml-1 text-sm
+                        rounded-lg md:hidden focus:outline-none focus:ring-inset 
+                         text-secondary focus:bg-inherit"
                         aria-controls="mobile-menu"
                         aria-expanded="false"
+                        onClick={() =>
+                            setIsMainNavVisible((prevState) => !prevState)
+                        }
                     >
                         <span className="sr-only">Open main menu</span>
-                        <svg
+                        {/* <svg
                             className="w-6 h-6"
                             aria-hidden="true"
                             fill="currentColor"
@@ -201,18 +212,26 @@ const Navbar = () => {
                                 d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
                                 clipRule="evenodd"
                             ></path>
-                        </svg>
+                        </svg> */}
+                        <img
+                            src={isMainNavVisible ? close : menu}
+                            alt="menu"
+                            className="w-[22px] h-[22px] object-contain cursor-pointer"
+                        />
                     </button>
                 </div>
 
                 {/* side drawer component */}
-                <SideDrawer
+                {/* <SideDrawer
                     ref={sideDrawerTargetEl}
                     handleClose={handleSideDrawerClicked}
-                />
+                /> */}
 
                 {/* navigation drawer */}
-                <MainDrawer ref={mainTargetEl} />
+                <MainDrawer
+                    ref={mainTargetEl}
+                    triggerCollapse={handleClickOutsideMainDrawer}
+                />
             </div>
         </nav>
     );

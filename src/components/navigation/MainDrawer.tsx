@@ -1,15 +1,39 @@
-import React, { ForwardedRef } from 'react';
+import React, { ForwardedRef, useEffect } from 'react';
 import PureLink from '../PureLink';
 import { getAllActiveLinks } from '@/utils/contants/constants';
+import { useLocation } from 'react-router-dom';
 
 interface MainDrawerProps {
     ref: ForwardedRef<HTMLDivElement>;
+    triggerCollapse: () => void;
 }
 
 const MainDrawer: React.FC<MainDrawerProps> = React.forwardRef<
     HTMLDivElement,
     Omit<MainDrawerProps, 'ref'>
 >((props, ref) => {
+    const location = useLocation();
+
+    useEffect(() => {
+        const collapse = (event: MouseEvent | UIEvent): void => {
+            if (
+                ref &&
+                'current' in ref &&
+                ref.current &&
+                ref.current.contains(event.target as HTMLElement)
+            ) {
+                console.log('im in');
+                console.log(ref.current);
+                props.triggerCollapse();
+            }
+        };
+
+        window.addEventListener('click', collapse);
+        return () => {
+            window.removeEventListener('click', collapse);
+        };
+    }, [ref]);
+
     return (
         <div
             className="items-center justify-between z-10 hidden w-[90%] md:flex md:w-auto md:order-1 
@@ -28,9 +52,13 @@ const MainDrawer: React.FC<MainDrawerProps> = React.forwardRef<
                         <li>
                             <PureLink
                                 href={obj.href}
-                                className="block py-2 pl-3 pr-4 rounded
-                                md:p-0 text-white md:hover:text-primary-purple hover:bg-primary-purple
-                                md:hover:bg-transparent border-gray-700 capitalize"
+                                className={`block py-2 pl-3 pr-4 rounded
+                                md:p-0  md:hover:text-primary-purple hover:bg-primary-purple
+                                md:hover:bg-transparent border-gray-700 capitalize ${
+                                    location.hash === obj.href
+                                        ? 'text-red-500'
+                                        : 'text-white'
+                                }`}
                                 aria-current="page"
                             >
                                 {obj.title}

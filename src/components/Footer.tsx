@@ -201,8 +201,9 @@ const Footer = () => {
                         © {new Date().getFullYear()} &nbsp;
                         <span className="text-red-400">Simon Mor</span> All
                         Rights Reserved.
+                        {/* social icons at the end of the footer */}
                     </span>
-                    <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
+                    {/* <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
                         <a
                             href={getHrefFromConstants('gitHub')}
                             target="_blank"
@@ -223,7 +224,7 @@ const Footer = () => {
                             </svg>
                             <span className="sr-only">GitHub account</span>
                         </a>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </footer>
