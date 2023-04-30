@@ -15,5 +15,5 @@ declare module 'react-tilt' {
         className?: any;
     }
 
-    export default class Tilt extends React.Component<TiltProps> { }
+    export default class Tilt extends React.Component<TiltProps> {}
 }

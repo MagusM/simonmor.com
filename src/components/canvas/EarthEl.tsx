@@ -1,4 +1,4 @@
-import { useGLTF } from "@react-three/drei";
+import { useGLTF } from '@react-three/drei';
 
 const Earth = () => {
     const earth = useGLTF('./planet/scene.gltf');
@@ -10,7 +10,7 @@ const Earth = () => {
             position-y={0}
             rotation-y={0}
         />
-    )
-}
+    );
+};
 
 export default Earth;

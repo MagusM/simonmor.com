@@ -1,7 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'media',
   purge: ['./index.html', './src/**/*.{js,jsx,ts,tsx}'],
-  content: ["./src/**/*.{ts,tsx}"],
+  content: [
+    "./src/**/*.{ts,tsx}",
+    'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}'
+  ],
   mode: "jit",
   theme: {
     extend: {
@@ -25,5 +29,7 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('flowbite/plugin')
+  ],
 }

@@ -1,18 +1,18 @@
-import { User } from "@/types";
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { RootState } from "..";
+import { User } from '@/types';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { RootState } from '..';
 
 interface UserState {
-    user: User|null,
-    loading: boolean,
-    error: string|null
+    user: User | null;
+    loading: boolean;
+    error: string | null;
 }
 
 const initialState: UserState = {
     user: null,
     loading: false,
-    error: null
-}
+    error: null,
+};
 
 const userReducer = {
     fetchUserStart: (state: UserState) => {
@@ -47,12 +47,12 @@ const userReducer = {
         state.loading = false;
         state.error = null;
     },
-}
+};
 
 export const userSlice = createSlice({
     name: 'user',
     initialState,
-    reducers: userReducer
+    reducers: userReducer,
 });
 
 export const {

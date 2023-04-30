@@ -1,10 +1,8 @@
-import { Navbar } from "@/components";
-import { useMediaQuery } from "@/hooks";
-import { AppLayout } from "@/layouts";
-import React, { Suspense } from "react";
+import { useMediaQuery } from '@/hooks';
+import { AppLayout } from '@/layouts';
+import React, { Suspense } from 'react';
 
 const Home = () => {
-
     const AboutLazy = React.lazy(() => import('../components/About'));
     const ExperienceLazy = React.lazy(() => import('../components/Experience'));
     const TechLazy = React.lazy(() => import('../components/Tech'));
@@ -16,9 +14,8 @@ const Home = () => {
     const { isMobile } = useMediaQuery();
 
     return (
-        <div className='relative z-0 bg-primary'>
-            <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
-                <Navbar />
+        <div className="relative z-0 bg-primary">
+            <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
                 <Suspense>
                     <HeroLazy isMobile={isMobile} />
                 </Suspense>
@@ -29,14 +26,12 @@ const Home = () => {
             <Suspense>
                 <ExperienceLazy />
             </Suspense>
-            <Suspense>
-                {/* <TechLazy /> */}
-            </Suspense>
+            <Suspense>{/* <TechLazy /> */}</Suspense>
             {/* <Works /> */}
             <Suspense>
                 <FeedbacksLazy />
             </Suspense>
-            <div className='relative z-0'>
+            <div className="relative z-0">
                 <Suspense>
                     <ContactLazy />
                     <StarsLazy />
@@ -44,6 +39,6 @@ const Home = () => {
             </div>
         </div>
     );
-}
+};
 
 export default AppLayout(Home);

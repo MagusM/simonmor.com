@@ -1,5 +1,5 @@
-import { Route, Routes } from "react-router-dom";
-import { Home } from "./pages";
+import { Route, Routes } from 'react-router-dom';
+import { Home } from './pages';
 
 const AppRoutes = () => {
     return (
@@ -7,6 +7,6 @@ const AppRoutes = () => {
             <Route path="/" element={<Home />} />
         </Routes>
     );
-}
+};
 
 export default AppRoutes;

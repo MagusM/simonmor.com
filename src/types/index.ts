@@ -1,5 +1,3 @@
-import User from "./user";
+import User from './user';
 
-export type {
-    User,
-}
+export type { User };

@@ -1,12 +1,14 @@
-import { Footer } from "@/components";
+import { Footer, Navbar } from '@/components';
 
-const AppLayout = (Component: any) => function AppLayout() {
-    return (
-        <>
-            <Component />
-            <Footer />
-        </>
-    );
-}
+const AppLayout = (Component: any) =>
+    function AppLayout() {
+        return (
+            <>
+                <Navbar />
+                <Component />
+                <Footer />
+            </>
+        );
+    };
 
-export default AppLayout
+export default AppLayout;

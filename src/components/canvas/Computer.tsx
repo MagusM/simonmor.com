@@ -1,7 +1,7 @@
 import { useGLTF } from '@react-three/drei';
 
 const Computers = ({ isMobile }: { isMobile: boolean }) => {
-    const computer = useGLTF("./desktop_pc/scene.gltf");
+    const computer = useGLTF('./desktop_pc/scene.gltf');
     return (
         <mesh>
             <hemisphereLight intensity={0.15} groundColor="black" />
@@ -21,7 +21,7 @@ const Computers = ({ isMobile }: { isMobile: boolean }) => {
                 rotation={[-0.01, -0.2, -0.1]}
             />
         </mesh>
-    )
-}
+    );
+};
 
 export default Computers;

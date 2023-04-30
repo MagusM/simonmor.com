@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 const useMediaQuery = () => {
     const [isMobile, setIsMobile] = useState<boolean>(false);
@@ -8,17 +8,17 @@ const useMediaQuery = () => {
         setIsMobile(mediaQuery.matches);
         const handleMediaQueryChange = (event: MediaQueryListEvent) => {
             setIsMobile(event.matches as boolean);
-        }
+        };
         mediaQuery.addEventListener('change', handleMediaQueryChange);
 
         return () => {
             mediaQuery.removeEventListener('change', handleMediaQueryChange);
-        }
+        };
     }, []);
 
     return {
-        isMobile: isMobile
-    }
-}
+        isMobile: isMobile,
+    };
+};
 
 export default useMediaQuery;

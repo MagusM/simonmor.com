@@ -2,5 +2,5 @@ export default interface User {
     name: string;
     email: string;
     password: string;
-    lastLogin: Date|null;
+    lastLogin: Date | null;
 }
