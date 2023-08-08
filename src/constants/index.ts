@@ -116,12 +116,24 @@ const technologies = [
 
 const experiences = [
     {
+        title: 'Senior Full Stack',
+        company_name: 'Doorloop',
+        icon: 'https://assets.website-files.com/5f073e32d304276cc8b4ff30/5fbc3a52d85118b32ac45bbd_Blue%20Emblem%20-%20Transparent%20Background.svg',
+        iconBg: '#E6DEDD',
+        iconSize: 'w-[80%] h-[80%]',
+        date: '2023 - present',
+        points: [
+            'Developing and maintaining web applications using React.js, Express.js and other related technologies.',
+            'Developing next gen Doorloop app, successfully bringing it from a startup level to a corporate standart, stable and profitable product for the company.',
+        ],
+    },
+    {
         title: 'Full Stack Team Leader',
         company_name: 'Carwiz',
         icon: 'https://ik.imagekit.io/carwiz/web-assets/carwiz_logo_2023.svg',
         iconBg: '#E6DEDD',
         iconSize: 'w-[80%] h-[80%]',
-        date: '2022 - present',
+        date: '2022 - 2023',
         points: [
             'Developing and maintaining web applications using React.js, Next.js, Node.js and other related technologies.',
             'Led the development of CarWiz, successfully bringing it from a startup level to a stable and profitable product for the company.',
