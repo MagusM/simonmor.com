@@ -121,10 +121,12 @@ const experiences = [
         icon: 'https://assets.website-files.com/5f073e32d304276cc8b4ff30/5fbc3a52d85118b32ac45bbd_Blue%20Emblem%20-%20Transparent%20Background.svg',
         iconBg: '#E6DEDD',
         iconSize: 'w-[80%] h-[80%]',
-        date: '2023 - present',
+        date: '2022 - present',
         points: [
-            'Developing and maintaining web applications using React.js, Express.js and other related technologies.',
-            'Developing next gen Doorloop app, successfully bringing it from a startup level to a corporate standart, stable and profitable product for the company.',
+            'Developing and maintaining web applications using React.js, Express.js, TypeScript and other related technologies.',
+            'Spearhead the development of the next-gen Doorloop app, elevating it from startup level to a corporate-standard product that is stable and profitable.',
+            'Lead business-sensitive implementations and refactoring efforts within the startup environment.',
+            'Mentor new developers, providing guidance and support to enhance team capabilities and performance.',
         ],
     },
     {
@@ -133,7 +135,7 @@ const experiences = [
         icon: 'https://ik.imagekit.io/carwiz/web-assets/carwiz_logo_2023.svg',
         iconBg: '#E6DEDD',
         iconSize: 'w-[80%] h-[80%]',
-        date: '2022 - 2023',
+        date: '2020 - 2022',
         points: [
             'Developing and maintaining web applications using React.js, Next.js, Node.js and other related technologies.',
             'Led the development of CarWiz, successfully bringing it from a startup level to a stable and profitable product for the company.',
@@ -147,7 +149,7 @@ const experiences = [
         icon: 'https://www.matrix.co.il/wp-content/themes/matrix_IL/assets/images/logo-matrix-new.png',
         iconBg: '#E6DEDD',
         iconSize: 'w-[80%] h-[80%]',
-        date: '2021 - 2022',
+        date: '2019 - 2020',
         points: [
             'Developing and maintaining web applications using React.js, Node.js and other related technologies.',
             'Led the development of the national application of epidemiology investigation used by the Israeli government and Health Department.',
@@ -155,25 +157,13 @@ const experiences = [
             'Helped define project vision, short and long-term goals, and increased the quality of the service, bringing the application to be ready for even shelf product within months.',
         ],
     },
-    {
-        title: 'Full Stack Team Leader',
-        company_name: 'Incredibuild',
-        icon: 'https://www.incredibuild.com/wp-content/themes/incredibuild/favicon/apple-icon-180x180.png',
-        iconBg: '#E6DEDD',
-        date: '2019 - 2021',
-        points: [
-            'Developing and maintaining web applications using React.js, Node.js, PHP and other related technologies.',
-            'Owned the company site and store and led the redesign process of the company on the technology side.',
-            'Managed Agile, tasks, and priori?es in the team on produc?on deployment processes.',
-            'Led the technology development of the entire company site and store.',
-        ],
-    },
+
     {
         title: 'Full stack Developer',
         company_name: 'Wobi',
         icon: 'https://www.wobi.co.il/wp-content/uploads/2019/03/wobi-logo.svg',
         iconBg: '#E6DEDD',
-        date: '2017 - 2019',
+        date: '2018 - 2019',
         points: [
             'Developing and maintaining web applications using React.js, Node.js, PHP and other related technologies.',
             "Built the company's main product server and client-side to support ongoing demand for client activities.",
@@ -187,7 +177,7 @@ const experiences = [
         icon: 'https://friends.walla.co.il/assets/images/logo/walla_blue.svg',
         iconBg: '#E6DEDD',
         iconSize: 'w-[83%] h-[83%]',
-        date: '2016 - 2017',
+        date: '2016 - 2018',
         points: [
             'Developing and maintaining web applications using PHP and other related technologies.',
             'Led and developed the Mail Application with constantly releasing new features and functionalities.',
